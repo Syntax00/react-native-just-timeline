@@ -4,6 +4,7 @@ import Example1 from './Example1/Example1';
 import Example2 from './Example2/Example2';
 import Example3 from './Example3/Example3';
 import Example4 from './Example4/Example4';
+import Example5 from './Example5/Example5';
 
 const App = () => {
   const examples = {
@@ -11,8 +12,9 @@ const App = () => {
     '2': <Example2 />,
     '3': <Example3 />,
     '4': <Example4 />,
+    '5': <Example5 />,
   };
-  return <View style={styles.appContainer}>{examples['4']}</View>;
+  return <View style={styles.appContainer}>{examples['5']}</View>;
 };
 
 const styles = StyleSheet.create({
