@@ -1,7 +1,7 @@
 {
   "name": "react-native-just-timeline",
   "version": "0.0.1",
-  "description": "React Native's customizable, RTL-supported, elegant, lazy-loading-ready, animatable Timeline component",
+  "description": "React Native's customizable, RTL-supported, elegant, lazy-loading-ready Timeline component",
   "main": "src/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,6 @@
     "lazy",
     "loading",
     "ready",
-    "animatable",
     "Timeline",
     "component",
     "RTL",
