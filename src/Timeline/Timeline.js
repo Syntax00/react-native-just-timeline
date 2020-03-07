@@ -123,7 +123,8 @@ const Timeline = ({
   onEndReachedThreshold,
   onEndReached,
   TimelineFooter,
-  TimelineHeader
+  TimelineHeader,
+  ...rest
 }) => {
   const events = (
     <FlatList
@@ -143,6 +144,7 @@ const Timeline = ({
       onEndReachedThreshold={onEndReachedThreshold || 0}
       ListFooterComponent={TimelineFooter}
       ListHeaderComponent={TimelineHeader}
+      {...rest}
     />
   );
 
