@@ -17,7 +17,7 @@ const EventIcon = ({ icon: OriginalIcon = {}, iconStyle, lineStyle }) => {
   // Determines whether we are trying to render a custom icon component, or use the default
   const iconIsComponent = typeof OriginalIcon === "function";
   let iconToBeRendered = iconIsComponent ? (
-    <OriginalIcon />
+    <OriginalIcon styles={styles.icon} />
   ) : (
     <Icon
       name={OriginalIcon.content}
@@ -73,7 +73,7 @@ const Row = ({
   // Determines whether the title is just a text and its style, or a render-prop function, and acts accrodingly
   const titleIsComponent = OriginalTitle && typeof OriginalTitle === "function";
   const title = titleIsComponent ? (
-    <OriginalTitle />
+    <OriginalTitle styles={styles.title} />
   ) : (
     typeof OriginalTitle === "object" &&
     !_isEmpty(OriginalTitle) && (
@@ -87,7 +87,7 @@ const Row = ({
   const descriptionIsComponent =
     OriginalDescription && typeof OriginalDescription === "function";
   const description = descriptionIsComponent ? (
-    <OriginalDescription />
+    <OriginalDescription styles={styles.description} />
   ) : (
     typeof OriginalDescription === "object" &&
     !_isEmpty(OriginalDescription) && (
