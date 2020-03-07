@@ -1,2 +1,2 @@
 # react-native-just-timeline
-React Native's flexible, customizable, elegant, lazy-loading-ready, animatable Timeline component
+React Native's customizable, RTL-supported, elegant, lazy-loading-ready, animatable Timeline component
