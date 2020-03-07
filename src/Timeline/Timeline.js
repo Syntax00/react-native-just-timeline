@@ -114,12 +114,16 @@ const Row = ({
 };
 
 const Timeline = ({
-  data = [],
-  eventStyle = {},
-  timeContainerStyle = {},
-  iconContainerStyle = {},
-  lineStyle = {},
-  contentContainerStyle = {}
+  data = [], // The actual event's array, array of objects, each object represents a single event
+  eventStyle = {}, // Each event's whole row's style
+  timeContainerStyle = {}, // The style object of the container that holds the time
+  iconContainerStyle = {}, // The style object of the container that holds the icon
+  lineStyle = {}, // The vertical line's style object
+  contentContainerStyle = {}, // The style object of the container that holds the content i.e. title and description
+  onEndReachedThreshold,
+  onEndReached,
+  TimelineFooter,
+  TimelineHeader
 }) => {
   const events = (
     <FlatList
@@ -135,6 +139,10 @@ const Timeline = ({
         />
       )}
       keyExtractor={(_, ndx) => ndx.toString()}
+      onEndReached={onEndReached}
+      onEndReachedThreshold={onEndReachedThreshold || 0}
+      ListFooterComponent={TimelineFooter}
+      ListHeaderComponent={TimelineHeader}
     />
   );
 
