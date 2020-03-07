@@ -138,7 +138,7 @@ const Timeline = ({
           contentContainerStyle={contentContainerStyle}
         />
       )}
-      keyExtractor={(_, ndx) => ndx.toString()} // Each item's key
+      keyExtractor={(_, ndx) => ndx.toString()}
       onEndReached={onEndReached}
       onEndReachedThreshold={onEndReachedThreshold || 0}
       ListFooterComponent={TimelineFooter}
