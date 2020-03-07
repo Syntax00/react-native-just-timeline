@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
   time: {
     fontSize: 12,
-    color: "#bbb",
+    color: "#aaa",
     fontStyle: "italic",
     textAlign: 'center'
   },
