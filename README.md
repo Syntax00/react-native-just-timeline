@@ -300,3 +300,76 @@ This code gets you something like:
 ![Clickable Rows Timeline](https://i.imgur.com/FnrbCBd.gif)
 
 Check the ```/Examples/Example5``` for more.
+
+
+## Lazy-loading, Infinite Scrolling
+Internally, the package utilizes React Native's ```FlatList``` to manage the list of rows in a performant way. That brings us to an important hint: _you can send any props that you usually send to FlatList to JustTimeline_. However, **_some props are renamed, refer to the props table to know about that_**
+So, with ```FlatList``` in mind, we can create a lazy-loadable Timeline using the exact same functionality as we might do in a normal ```FlatList```, using ```onEndReached``` function.
+```onEndReached``` will be a function that creates an async call and then appends the new data to our state.
+```TimelineFooter``` a prop that accepts a React Native component to display at the end/bottom of the Timeline, we use it to render a loading spinner at the end of the Timeline while fetching the data.
+
+```javascript
+const LazyLoadableTimeline = () => {
+  const [{loading, data}, setState] = useReducer(
+    (base, next) => ({...base, ...next}),
+    {
+      loading: false,
+      data: defaultData, // The already-existing data that were, for instance, fetched on component mounting
+    },
+  );
+
+  return (
+    <View style={styles.container}>
+      <Timeline
+        data={data}
+        TimelineFooter={() => (loading ? <ActivityIndicator /> : null)} // Loader component
+        onEndReached={() => {
+          // When the user reaches the end of the Timeline, set a loader
+          setState({loading: true});
+          
+          // Your asyncronous behavious, e.g. AJAX call
+          setTimeout(() => {
+            // Append the new data to the state's array
+            setState({
+              data: data.concat([
+                {
+                  title: {
+                    content: 'New Event 1',
+                  },
+                  description: {
+                    content: 'New Event 1 description',
+                  },
+                  time: {
+                    content: moment().format('ll'),
+                  },
+                },
+                {
+                  title: {
+                    content: 'New Event 2',
+                  },
+                  description: {
+                    content: 'New Event 2 description',
+                  },
+                  time: {
+                    content: moment().format('ll'),
+                  },
+                }
+              ]),
+              
+              // Turn off the loader
+              loading: false,
+            });
+          }, 2500);
+        }}
+      />
+    </View>
+  );
+};
+
+```
+
+The previous code gets you the following behavior:
+
+![Lazy Loading Timeline](https://i.imgur.com/JtmUBlJ.gif)
+
+Check the ```/Examples/Example6``` for more.
