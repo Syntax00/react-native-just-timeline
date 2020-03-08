@@ -304,6 +304,7 @@ Check the ```/Examples/Example5``` for more.
 
 ## Lazy-loading, Infinite Scrolling
 Internally, the package utilizes React Native's ```FlatList``` to manage the list of rows in a performant way. That brings us to an important hint: _you can send any props that you usually send to FlatList to JustTimeline_. However, **_some props are renamed, refer to the props table to know about that_**
+
 So, with ```FlatList``` in mind, we can create a lazy-loadable Timeline using the exact same functionality as we might do in a normal ```FlatList```, using ```onEndReached``` function.
 ```onEndReached``` will be a function that creates an async call and then appends the new data to our state.
 ```TimelineFooter``` a prop that accepts a React Native component to display at the end/bottom of the Timeline, we use it to render a loading spinner at the end of the Timeline while fetching the data.
