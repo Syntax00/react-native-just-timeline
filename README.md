@@ -207,3 +207,96 @@ This code gets you something like:
 ![Render Props Timeline](https://i.imgur.com/23kWCC0.png)
 
 Check the ```/Examples/Example3``` and ```/Examples/Example4``` for more.
+
+
+## Clickable Rows
+Well, you may face that case in which you need to perform an action on a certain event/row in the Timeline when pressing. This functionality is available, you control it on each event/row's object individually by sending a ```pressAction``` function which gets executed ```onPress```.
+
+```javascript
+const Example5 = () => {
+  const [isModalOpen, setModalStatus] = useState(false);
+  const data = [
+    // First row in Timeline
+    {
+      pressAction: () => setModalStatus(true), // Gets triggered on row's press
+      title: {
+        content: 'Bakr',
+      },
+      description: {
+        content: 'Comment goes right here',
+      },
+      time: {
+        content: moment().format('ll'),
+        style: {
+          paddingTop: 8,
+        },
+      },
+      icon: () => (
+        <View>
+          <Image
+            source={require('../assets/images/1.jpg')}
+            style={{
+              width: 45,
+              height: 45,
+              borderRadius: 25,
+              borderWidth: 3,
+              borderColor: '#fff',
+            }}
+          />
+        </View>
+      ),
+    },
+    
+    // Second row in Timelind
+    {
+      pressAction: () => setModalStatus(true), // Gets triggered on row's press
+      title: {
+        content: 'Nancy',
+      },
+      description: {
+        content: 'Comment goes right here',
+      },
+      time: {
+        content: moment().format('ll'),
+        style: {
+          paddingTop: 8,
+        },
+      },
+      icon: () => (
+        <View>
+          <Image
+            source={require('../assets/images/2.jpg')}
+            style={{
+              width: 35,
+              height: 35,
+              borderRadius: 20,
+              borderWidth: 3,
+              borderColor: '#FFF',
+            }}
+          />
+        </View>
+      ),
+    }
+  ];
+  
+  return (
+    <View style={styles.exampleContainer}>
+    
+      {/* Toggle this modal on event/row's press */}
+      <CustomDialog
+        isVisible={isModalOpen}
+        dismissAction={() => setModalStatus(false)}>
+        <PopupContent pressAction={() => setModalStatus(false)} />
+      </CustomDialog>
+      
+      
+      <Timeline data={data} />
+    </View>
+  );
+};
+```
+This code gets you something like:
+
+![Clickable Rows Timeline](https://i.imgur.com/FnrbCBd.gif)
+
+Check the ```/Examples/Example5``` for more.
