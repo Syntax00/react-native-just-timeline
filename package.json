@@ -48,5 +48,9 @@
   "peerDependencies": {
     "react": "^16.6.3",
     "react-native": "^0.58.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Syntax00/react-native-just-timeline.git"
   }
 }
