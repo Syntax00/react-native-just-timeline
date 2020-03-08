@@ -374,3 +374,10 @@ The previous code gets you the following behavior:
 ![Lazy Loading Timeline](https://i.imgur.com/JtmUBlJ.gif)
 
 Check the ```/Examples/Example6``` for more.
+
+
+# Props
+Prop | Description | Type
+------------ | ------------- | -------------
+data | Contains the events/rows data as an array of object. Each object represents an event | ```Array```
+eventStyle | Style object used to override the row's container's styles | ```Object```
