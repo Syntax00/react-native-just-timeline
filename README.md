@@ -377,7 +377,15 @@ Check the ```/Examples/Example6``` for more.
 
 
 # Props
-Prop | Description | Type
------------- | ------------- | -------------
-data | Contains the events/rows data as an array of object. Each object represents an event | ```Array```
-eventStyle | Style object used to override the row's container's styles | ```Object```
+Prop | Description | Type | Default
+------------ | ------------- | ------------- | -------------
+data | Contains the events/rows data as an array of object. Each object represents an event | ```Array``` | ```Array```
+eventStyle | Style object used to override the row's container's styles | ```Object``` | ```Object```
+timeContainerStyle | Style object used to override the time's container block's styles | ```Object``` | ```Object```
+iconContainerStyle | Style object used to override the icon's container block's styles | ```Object``` | ```Object```
+lineStyle | Style object used to override the vertical line style | ```Object``` | ```Object```
+contentContainerStyle | Style object used to override the content's container block's styles, i.e. that contains ```title``` and ```description``` | ```Object``` | ```Object```
+TimelineFooter | A React Native component to be rendered at the end of the Timeline | ```React Native Component``` | ```Undefined```
+TimelineHeader | A React Native component to be rendered at the heading of the Timeline | ```React Native Component``` | ```Undefined```
+onEndReached | A function that gets executed when user reaches the end of the Timeline | ```Function``` | ```Undefined```
+onEndReachedThreshold | Defines the distance **in pixels** _far from the Timeline's bottom_ at which the ```onEndReached``` function gets called | ```Number``` | ```0```
