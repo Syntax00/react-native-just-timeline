@@ -80,7 +80,7 @@ const BasicTimeline = () => {
 ```
 
 This code gets you the default basic Timeline, like below:
-![Basic Timeline](https://i.imgur.com/Z32luWP.png)
+![Basic Timeline](https://i.imgur.com/aJDVOgt.png)
 
 The ```title```, ```description```, ```time```, and ```icon``` are objects because we can provide each of them with another property that is adjacent to ```content``` for styling ```style```, and it accepts normal styling properties and is used to override the default styling of each of them, e.g.:
 ```javascript
@@ -108,3 +108,4 @@ The ```title```, ```description```, ```time```, and ```icon``` are objects becau
   ];
 ```
 
+Check the ```/Examples/Example1``` for clearer overlook.
