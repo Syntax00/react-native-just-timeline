@@ -23,7 +23,7 @@ However, ```react-native-vector-icons``` is internally used to provided the icon
 
 # Usage
 
-### Basic
+## Basic
 Actually, to get the Timeline up and running, all you need to do is to call the component ```Timeline``` and provide it with a ```data``` array of objects. Every object represents a timeline event or row. The basic ```data``` shape to get the default Timeline functionality and styling is:
 
 ```javascript
@@ -114,7 +114,7 @@ The ```title```, ```description```, ```time```, and ```icon``` are objects becau
 Check the ```/Examples/Example1``` and ```/Examples/Example2``` for clearer overlook and more tweaks ;)
 
 
-### Render props
+## Render props
 Render props is always a great React.js/React Native pattern that embraces reusability and customizability.
 If you felt like you are kind of limited with the previous structure of ```{ content: "", style: {} }``` and need more control, you can send a function that returns a React Native component, whatsoever it is. And, we can do that on each part of the row individually without having to follow the same pattern on all of them, i.e. in the following code, we can mix up the render props in ```title``` with basic ```{ content: "", style: {} }``` on the rest.
 **_You get the default style of ```title```, ```description```, ```icon```, and ```time``` as a prop to the function_```
@@ -202,5 +202,8 @@ const RenderPropsUsage = () => {
   );
 };
 ```
+This code gets you something like:
+
+![Render Props Timeline](https://i.imgur.com/23kWCC0.png)
 
 Check the ```/Examples/Example3``` and ```/Examples/Example4``` for more.
