@@ -64,7 +64,8 @@ const Row = ({
     description: OriginalDescription = {},
     time,
     icon,
-    pressAction
+    pressAction,
+    eventLineStyle = {},
   } = event;
 
   // Determines whether or not the Row is clickable, and acts accordingly
@@ -103,7 +104,7 @@ const Row = ({
       <EventIcon
         icon={icon}
         iconStyle={iconContainerStyle}
-        lineStyle={lineStyle}
+        lineStyle={{...lineStyle, ...eventLineStyle}}
       />
       <Event style={contentContainerStyle}>
         {title}
