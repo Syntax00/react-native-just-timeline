@@ -22,7 +22,7 @@
   "author": "Mohamed Ahmed <m.syntax95@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "react-native-vector-icons": "^6.3.0"
   },
   "devDependencies": {
